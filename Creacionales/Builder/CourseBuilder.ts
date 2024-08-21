@@ -13,6 +13,9 @@ export class CourseBuilder {
     public startDate: Date | null = null;
     public endDate: Date | null = null;
 
+    private customMethod:(cadena: string)=>void = (cadena: string)=> {
+
+    }
 
     public setName(name: string): CourseBuilder {
         this.name = name;
@@ -54,6 +57,11 @@ export class CourseBuilder {
         return this
     }
 
+    public setCustomMethod(method: (cadena:string)=>void): CourseBuilder{
+        this.customMethod = method
+        return this
+    }
+
     public buildCourse(): Course {
         const course = new Course(
             this.name,
@@ -65,6 +73,15 @@ export class CourseBuilder {
             this.startDate,
             this.endDate
         );
+        course.addExtraBehavior = this.customMethod;
         return course;
+    }
+
+    public addStudent(student: IStudent): CourseBuilder {
+        if (!this.students) {
+            this.students = [];
+        }
+        this.students.push(student);
+        return this;
     }
 }
