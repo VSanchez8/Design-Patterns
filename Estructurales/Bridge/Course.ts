@@ -36,7 +36,7 @@ export class Course {
         return this.students;
     }
 
-    public get getStartDate(): Date | null {
+    public getStartDate(): Date | null {
         return this.startDate;
     }
 

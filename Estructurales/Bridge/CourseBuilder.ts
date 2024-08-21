@@ -69,7 +69,7 @@ export class CourseBuilder {
         this.instructorDetails = { ...curso.getInstructorDetails() };
         this.schedule = curso.getSchedule()
         this.students = curso.getStudents? curso.getStudents.map(student => ({ ...student })) : null;
-        this.startDate = curso.getStartDate? new Date(curso.getStartDate.getTime()) : null;
+        this.startDate = curso.getStartDate()
         this.endDate = curso.getEndDate? new Date(curso.getEndDate.getTime()) : null;
         this.customMethod = curso.getExtraBehavior();
         return this;
