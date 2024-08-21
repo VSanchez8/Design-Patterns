@@ -18,9 +18,9 @@ console.log('*****************************************');
 
 const advancedCourse = new CourseBuilder()
 .setName('TypeScript Avanzado')
-.setDescription('Un curso avanzado sobre TypeScript')
-.setMaterials(['Libro', 'Videos', 'Proyectos'])
-.setInstructor({ name: 'Bob', email: 'bob@example.com', experience: 10 })
+.setDescription('Template para cursos avanzados')
+.setMaterials(['Libro', 'Videos', 'Proyectos', 'Diapositivas'])
+.setSchedule({days: ['Lunes'], time: 'De 8:00 AM a 5:00PM'})
 .setstudents([
     { name: 'Kevin', email: 'Kevin@example.com' },
     { name: 'Victor', email: 'Victor@example.com' },
@@ -38,7 +38,27 @@ advancedCourse.displayCourseInfo();
 console.log('*****************************************');
 
 
-const nuevoCurso = advancedCourse
+const cursoAvanzadoBD  = new CourseBuilder()
+.fromPrototype(advancedCourse.clone())
+.setName('Curso especializado de base de datos')
+.setInstructor({name: 'Ivan', email: 'ivan@example.com', experience: 5 })
+.setSchedule({days: ['Lunes'], time: 'De 8:00 AM a 10:00 AM'})
+.buildCourse()
+
+console.log('Imprimiendo clon para base de datos');
+cursoAvanzadoBD.displayCourseInfo();
+console.log('*****************************************');
+
+const cursoAvanzadoAPIS  = new CourseBuilder()
+.fromPrototype(advancedCourse.clone())
+.setName('Curso avanzado de Apis')
+.setInstructor({name: 'Rodrigo', email: 'rodrigo@example.com', experience: 5 })
+.setSchedule({days: ['Lunes'], time: 'De 8:00 AM a 12:00 PM'})
+.buildCourse()
+
+console.log('Imprimiendo clon para APIS');
+cursoAvanzadoAPIS.displayCourseInfo();
+console.log('*****************************************');
 
 // console.log('Curso 2 agregar un estudiante');
 // advancedCourse.addStudent({ name: 'Javier', email: 'javier@example.com'})
