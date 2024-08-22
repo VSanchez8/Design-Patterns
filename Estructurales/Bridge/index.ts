@@ -11,9 +11,9 @@ const basicCourse = new CourseBuilder()
 console.log('Curso 1:');
 // basicCourse.addExtraBehavior('Extra mensaje: este curso es sabatino')
 // basicCourse.displayCourseInfo();
-console.log('*****************************************');
+// console.log('*****************************************');
 // basicCourse.addExtraBehavior('mensaje: este curso es sabatino')
-console.log('*****************************************');
+// console.log('*****************************************');
 
 
 const advancedCourse = new CourseBuilder()
@@ -45,13 +45,13 @@ const cursoAvanzadoBD  = new CourseBuilder()
 .setMaterials(['Cuenta en azure', 'Instalador de sql server', 'Docuementacion'])
 .buildCourse()
 
-console.log('Imprimiendo clon para base de datos');
-cursoAvanzadoBD.displayCourseInfo();
+// console.log('Imprimiendo clon para base de datos');
+// cursoAvanzadoBD.displayCourseInfo();
 // console.log('*****************************************');
 
-const presentaciononline = new PresentacionOnline('Teams', cursoAvanzadoBD)
-presentaciononline.presentarCurso()
-presentaciononline.enviarRecordatorio('Tu curso sera el dia' + cursoAvanzadoBD.getStartDate())
+// const presentaciononline = new PresentacionOnline('Teams', cursoAvanzadoBD)
+// presentaciononline.presentarCurso()
+// presentaciononline.enviarRecordatorio('Tu curso sera el dia' + cursoAvanzadoBD.getStartDate())
 
 const presentaciononsite = new presentacionOnSite('Interlomas', cursoAvanzadoBD)
 presentaciononsite.presentarCurso()
